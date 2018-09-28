@@ -5,11 +5,5 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 =end
 
-sum = 0
-(1...1000).each do |n|
-  if n % 3 == 0 || n % 5 == 0
-    sum += n
-  end
-end
-
-puts sum
+element = [*1...1000].select { |n| n % 3 == 0 || n % 5 == 0 }
+puts element.inject { |result, n| result + n }
