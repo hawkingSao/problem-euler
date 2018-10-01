@@ -6,6 +6,4 @@ What is the largest prime factor of the number 600851475143 ?
 =end
 
 require 'prime'
-puts Prime.prime_division(600851475143).map(&:first).last
-
-
+puts Prime.prime_division(600851475143).map(&:first).max
