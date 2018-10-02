@@ -9,11 +9,13 @@ def palindrome?(result)
   result.to_s.reverse == result.to_s
 end
 
-palindromic_number_array = []
-(100..999).each do |n|
-  (n..999).each do |i|
+answer = {palindromic_number: 0, n: 100, i: 100}
+999.downto(100) do |n|
+  999.downto(n) do |i|
     result = n * i
-    palindromic_number_array << result if palindrome?(result)
+    if palindrome?(result) && answer[:palindromic_number] < result
+      answer[:palindromic_number], answer[:n], answer[:i] = result, n, i
+    end
   end
 end
-puts palindromic_number_array.max
+puts answer
