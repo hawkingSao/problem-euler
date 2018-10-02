@@ -11,12 +11,9 @@ end
 
 palindromic_number_array = []
 (100..999).each do |n|
-  (100..999).each do |i|
+  (n..999).each do |i|
     result = n * i
-
-    if palindrome?(result)
-      palindromic_number_array << result
-    end
+    palindromic_number_array << result if palindrome?(result)
   end
 end
 puts palindromic_number_array.max
