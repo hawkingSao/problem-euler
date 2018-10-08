@@ -10,17 +10,20 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 =end
 
+def pythagorean_triplet?(a, b, c)
+  a ** 2 + b ** 2 == c ** 2
+end
+
 start_time = Time.now
 array = []
 1.upto(998) do |a|
   (a + 1).upto(998) do |b|
     c = 1000 - (a + b)
-    if a ** 2 + b ** 2 == c ** 2
+    if pythagorean_triplet?(a, b, c)
         array.push(a, b, c)
     end
   end
 end
-p array
 puts array.inject(:*)
 puts "処理速度 #{Time.now - start_time}s"
 #=> 31875000
