@@ -10,15 +10,17 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 =end
 
+start_time = Time.now
 array = []
-1.upto(998) do |l|
-  (l + 1).upto(998) do |m|
-    (m + 1).upto(998) do |n|
-      if l + m + n == 1000 && l ** 2 + m ** 2 == n ** 2
-        array.push(l, m, n)
-      end
+1.upto(998) do |a|
+  (a + 1).upto(998) do |b|
+    c = 1000 - (a + b)
+    if a ** 2 + b ** 2 == c ** 2
+        array.push(a, b, c)
     end
   end
 end
+p array
 puts array.inject(:*)
+puts "処理速度 #{Time.now - start_time}s"
 #=> 31875000
