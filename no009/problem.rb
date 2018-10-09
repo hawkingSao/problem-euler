@@ -14,16 +14,20 @@ def pythagorean_triplet?(a, b, c)
   a ** 2 + b ** 2 == c ** 2
 end
 
-start_time = Time.now
-array = []
-1.upto(998) do |a|
-  (a + 1).upto(998) do |b|
-    c = 1000 - (a + b)
-    if pythagorean_triplet?(a, b, c)
-        array.push(a, b, c)
+def calculation
+  1.upto(998) do |a|
+    (a + 1).upto(1000 - a) do |b|
+      if a + b < 1000
+        c = 1000 - (a + b)
+        if c < a + b
+          if pythagorean_triplet?(a, b, c)
+            return a * b * c
+          end
+        end
+      end
     end
   end
 end
-puts array.inject(:*)
-puts "処理速度 #{Time.now - start_time}s"
+
+puts calculation
 #=> 31875000
