@@ -57,7 +57,7 @@ end
 # diagonally
 table.each.with_index(0) do |row, i|
   row.each.with_index(0) do |number, j|
-    if i < 16 && j < 16
+    if i <= 16 && j <= 16
       results_array << diagonally_right_down_array(table: table, row: i, column: j).inject(:*)
     end
 
