@@ -28,8 +28,6 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 =end
 
-table, results_array = [], []
-
 def diagonally_right_down_array(table:, row:, column:)
   Array.new(4){ |i| table[row + i][column + i] }
 end
@@ -38,24 +36,21 @@ def diagonally_right_up_array(table:, row:, column:)
   Array.new(4){ |i| table[row - i][column + i] }
 end
 
+table = []
 File.open('number.txt') do |numbers|
   numbers.each_line do |line|
     table << line.chomp.split.map(&:to_i)
   end
 end
 
-# right, left
-table.each do |row|
-  row.each_cons(4) do |adjacent_array|
-    results_array << adjacent_array.inject(:*)
-  end
-end
+tables, results_array = [table, table.transpose], []
 
-# up, down
-transpose_table = table.transpose
-transpose_table.each do |row|
-  row.each_cons(4) do |adjacent_array|
-    results_array << adjacent_array.inject(:*)
+# right, left, up, down
+tables.each do |each_table|
+  each_table.each do |row|
+    row.each_cons(4) do |adjacent_array|
+      results_array << adjacent_array.inject(:*)
+    end
   end
 end
 
