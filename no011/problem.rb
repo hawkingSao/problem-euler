@@ -31,6 +31,14 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 table = []
 results_array = []
 
+def diagonally_right_down_array(table:, row:, column:)
+  Array.new(4){ |i| table[row + i][column + i] }
+end
+
+def diagonally_right_up_array(table:, row:, column:)
+  Array.new(4){ |i| table[row - i][column + i] }
+end
+
 File.open('number.txt') do |numbers|
   numbers.each_line do |line|
     table << line.chomp.split.map(&:to_i)
@@ -58,12 +66,12 @@ end
 table.each.with_index(0) do |row, i|
   row.each.with_index(0) do |number, j|
     if i < 16 && j < 16
-      result = table[i][j] * table[i + 1][j + 1] * table[i + 2][j + 2] * table[i + 3][j + 3]
+      result = diagonally_right_down_array(table: table, row: i, column: j).inject(:*)
       results_array << result
     end
 
     if i >= 3 && j <= 16
-      result = table[i][j] * table[i - 1][j + 1] * table[i - 2][j + 2] * table[i - 3][j + 3]
+      result = diagonally_right_up_array(table: table, row: i, column: j).inject(:*)
       results_array << result
     end
   end
