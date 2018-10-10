@@ -29,9 +29,29 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 =end
 
 table = []
+results_array = []
+
 File.open('number.txt') do |numbers|
   numbers.each_line do |line|
     table << line.chomp.split.map(&:to_i)
   end
 end
-p table
+
+# right, left
+table.each.with_index(1) do |row|
+  row.each_cons(4) do |adjacent_array|
+    result = adjacent_array.inject(:*)
+    results_array << result
+  end
+end
+
+# up, down
+transpose_table = table.transpose
+transpose_table.each.with_index(1) do |row|
+  row.each_cons(4) do |adjacent_array|
+    result = adjacent_array.inject(:*)
+    results_array << result
+  end
+end
+
+puts results_array.max
