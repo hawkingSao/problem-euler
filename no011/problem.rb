@@ -38,7 +38,7 @@ File.open('number.txt') do |numbers|
 end
 
 # right, left
-table.each.with_index(1) do |row|
+table.each do |row|
   row.each_cons(4) do |adjacent_array|
     result = adjacent_array.inject(:*)
     results_array << result
@@ -47,10 +47,25 @@ end
 
 # up, down
 transpose_table = table.transpose
-transpose_table.each.with_index(1) do |row|
+transpose_table.each do |row|
   row.each_cons(4) do |adjacent_array|
     result = adjacent_array.inject(:*)
     results_array << result
+  end
+end
+
+# diagonally
+table.each.with_index(0) do |row, i|
+  row.each.with_index(0) do |number, j|
+    if i < 16 && j < 16
+      result = table[i][j] * table[i + 1][j + 1] * table[i + 2][j + 2] * table[i + 3][j + 3]
+      results_array << result
+    end
+
+    if i >= 3 && j <= 16
+      result = table[i][j] * table[i - 1][j + 1] * table[i - 2][j + 2] * table[i - 3][j + 3]
+      results_array << result
+    end
   end
 end
 
