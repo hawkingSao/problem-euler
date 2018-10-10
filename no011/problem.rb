@@ -28,8 +28,7 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 =end
 
-table = []
-results_array = []
+table, results_array = [], []
 
 def diagonally_right_down_array(table:, row:, column:)
   Array.new(4){ |i| table[row + i][column + i] }
@@ -48,8 +47,7 @@ end
 # right, left
 table.each do |row|
   row.each_cons(4) do |adjacent_array|
-    result = adjacent_array.inject(:*)
-    results_array << result
+    results_array << adjacent_array.inject(:*)
   end
 end
 
@@ -57,8 +55,7 @@ end
 transpose_table = table.transpose
 transpose_table.each do |row|
   row.each_cons(4) do |adjacent_array|
-    result = adjacent_array.inject(:*)
-    results_array << result
+    results_array << adjacent_array.inject(:*)
   end
 end
 
@@ -66,13 +63,11 @@ end
 table.each.with_index(0) do |row, i|
   row.each.with_index(0) do |number, j|
     if i < 16 && j < 16
-      result = diagonally_right_down_array(table: table, row: i, column: j).inject(:*)
-      results_array << result
+      results_array << diagonally_right_down_array(table: table, row: i, column: j).inject(:*)
     end
 
     if i >= 3 && j <= 16
-      result = diagonally_right_up_array(table: table, row: i, column: j).inject(:*)
-      results_array << result
+      results_array << diagonally_right_up_array(table: table, row: i, column: j).inject(:*)
     end
   end
 end
