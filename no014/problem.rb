@@ -9,7 +9,7 @@ def collatz_sequence(number:, count:)
 end
 
 result_hash = { longest_chain_count: 0, answer: 0 }
-(1..1000000).each do |number|
+(1..1_000_000).each do |number|
   calculation = collatz_sequence(number: number, count: 0)
   if result_hash[:longest_chain_count] < calculation
     result_hash[:longest_chain_count] = calculation
