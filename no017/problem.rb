@@ -56,7 +56,7 @@ class Integer
     when 90
       'ninety'
     when (21..99)
-      quotient, remainder = self.divmod(10)
+      quotient, remainder = divmod(10)
       tens_place = quotient * 10
       tens_place.to_l + '-' + remainder.to_l
     end
