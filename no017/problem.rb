@@ -55,6 +55,8 @@ class Integer
       'eighty'
     when 90
       'ninety'
+    when (21..99)
+      'test'
     end
   end
 end
