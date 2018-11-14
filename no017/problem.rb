@@ -59,6 +59,13 @@ class Integer
       quotient, remainder = divmod(10)
       tens_place = quotient * 10
       tens_place.to_l + '-' + remainder.to_l
+    when (100..999)
+      quotient, remainder = divmod(100)
+      if remainder.zero?
+        quotient.to_l + ' hundred'
+      else
+        quotient.to_l + ' hundred and ' + remainder.to_l
+      end
     end
   end
 end
