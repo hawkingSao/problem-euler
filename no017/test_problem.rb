@@ -10,5 +10,7 @@ class ProblemTest < Minitest::Test
     assert_equal 3, 1.to_l.size
     assert_equal 'three', 3.to_l
     assert_equal 5, 3.to_l.size
+    assert_equal 19, number_letter_counts(from: 1, to: 5)
+    assert_equal 112, number_letter_counts(from: 1, to: 20)
   end
 end
