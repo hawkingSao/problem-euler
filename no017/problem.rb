@@ -64,5 +64,5 @@ class Integer
 end
 
 def number_letter_counts(from:, to:)
-  (from..to).map(&:to_l).map(&:size).inject(&:+)
+  (from..to).map(&:to_l).map { |i| i.delete('-') }.map(&:size).inject(&:+)
 end
