@@ -41,6 +41,20 @@ class Integer
     'nineteen'
     when 20
     'twenty'
+    when 30
+    'thirty'
+    when 40
+    'forty'
+    when 50
+    'fifty'
+    when 60
+    'sixty'
+    when 70
+    'seventy'
+    when 80
+    'eighty'
+    when 90
+    'ninety'
     end
   end
 end
