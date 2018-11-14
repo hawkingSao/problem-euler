@@ -66,6 +66,8 @@ class Integer
       else
         quotient.to_l + ' hundred and ' + remainder.to_l
       end
+    when 1000
+      'one thousand'
     end
   end
 end
@@ -73,3 +75,5 @@ end
 def number_letter_counts(from:, to:)
   (from..to).map(&:to_l).map { |i| i.gsub(/-|\s/, '') }.map(&:size).inject(&:+)
 end
+
+puts number_letter_counts(from: 1, to: 1000)
