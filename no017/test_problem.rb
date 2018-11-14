@@ -18,5 +18,6 @@ class ProblemTest < Minitest::Test
     assert_equal 9, number_letter_counts(from: 21, to: 21)
     assert_equal 'one hundred and one', 101.to_l
     assert_equal 'two hundred', 200.to_l
+    assert_equal 16, number_letter_counts(from: 101, to: 101)
   end
 end
