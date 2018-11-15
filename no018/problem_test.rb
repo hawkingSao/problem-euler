@@ -7,6 +7,6 @@ Minitest::Reporters.use!
 class ProblemTest < Minitest::Test
   def test_path_array
     assert_equal 15, path_array.size
-    assert_equal 15, path_array.last.size
+    assert_equal 15, path_array.first.size
   end
 end
