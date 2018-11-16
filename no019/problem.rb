@@ -1,3 +1,5 @@
+require 'date'
+
 def count_sunday(start_year, start_month, end_year, end_month)
-  0
+  Date.new(start_year, start_month).upto(Date.new(end_year, end_month)).count
 end
