@@ -6,7 +6,7 @@ Minitest::Reporters.use!
 
 class ProblemTest < Minitest::Test
   def test_path_array
-    assert_equal 1, count_sunday(1900, 1, 1900, 1)
-    assert_equal 12, count_sunday(1900, 1, 1900, 12)
+    assert_equal 0, count_sunday(1900, 1, 1900, 1)
+    assert_equal 2, count_sunday(2018, 1, 2018, 12)
   end
 end
