@@ -1,3 +1,3 @@
 def factorial_digit_sum(number)
-  1
+  number.downto(1).inject(&:*)
 end
