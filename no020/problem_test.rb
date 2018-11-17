@@ -6,6 +6,6 @@ Minitest::Reporters.use!
 
 class ProblemTest < Minitest::Test
   def test_factorial_digit_sum
-    assert_equal 1, factorial_digit_sum(10)
+    assert_equal 3628800, factorial_digit_sum(10)
   end
 end
