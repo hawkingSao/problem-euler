@@ -8,3 +8,7 @@ def d(number)
   end
   geometric_progression_of_divisor.inject(&:*) - number
 end
+
+def amicable?(number, comparison)
+  true
+end

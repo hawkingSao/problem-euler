@@ -21,4 +21,8 @@ class ProblemTest < Minitest::Test
     end
     assert_equal '引数が整数ではない', e.message
   end
+
+  def test_amicable
+    assert_equal true, amicable?(220, 284)
+  end
 end
