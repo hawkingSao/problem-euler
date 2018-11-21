@@ -10,7 +10,7 @@ class ProblemTest < Minitest::Test
     assert_equal 220, d(284)
   end
 
-  def test_invalid
+  def test_augument_class_is_not_integer
     e = assert_raises RuntimeError do
       d(6.5)
     end
