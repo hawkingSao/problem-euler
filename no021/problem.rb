@@ -10,5 +10,5 @@ def d(number)
 end
 
 def amicable?(number, comparison)
-  true
+  d(number) == comparison && d(comparison) == number && number != comparison
 end
