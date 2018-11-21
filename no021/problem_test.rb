@@ -8,9 +8,10 @@ class ProblemTest < Minitest::Test
   def test_sum_of_proper_divisors
     assert_equal 284, d(220)
     assert_equal 220, d(284)
+    assert_equal 0, d(1)
   end
 
-  def test_augument_class_is_not_integer
+  def test_augment_class_is_not_integer
     e = assert_raises RuntimeError do
       d(6.5)
     end
