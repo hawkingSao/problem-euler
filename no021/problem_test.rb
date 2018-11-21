@@ -26,5 +26,7 @@ class ProblemTest < Minitest::Test
   def test_amicable
     assert_equal true, amicable?(220, 284)
     assert_equal false, amicable?(220, 255)
+    assert_equal true, amicable?(220, d(220))
+    assert_equal false, amicable?(5, d(5))
   end
 end

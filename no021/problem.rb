@@ -16,3 +16,10 @@ end
 def amicable?(number, comparison)
   d(number) == comparison && d(comparison) == number && number != comparison
 end
+
+answer = 0
+(1..10_000).each do |i|
+  answer += i if amicable?(i, d(i))
+end
+
+puts answer
