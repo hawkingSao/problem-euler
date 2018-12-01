@@ -10,4 +10,9 @@ class ProblemTest < Minitest::Test
     assert_equal 'ZULMA', names.last
     assert_equal 5163, names.size
   end
+
+  def test_score_of_colin
+    assert_equal 937, names.index('COLIN')
+    assert_equal 49_714, score_of_name('COLIN', 938)
+  end
 end
