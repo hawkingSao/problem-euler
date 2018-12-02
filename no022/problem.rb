@@ -7,3 +7,8 @@ def score_of_name(name, index)
   worth * index
 end
 
+answer = 0
+names.each.with_index(1) do |name, index|
+  answer += score_of_name(name, index)
+end
+puts answer
