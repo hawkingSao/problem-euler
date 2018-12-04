@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 sum = 0
 File.open('number.txt') do |numbers|
   numbers.each_line do |line|

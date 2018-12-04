@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'date'
 
 def count_sunday(start_year, start_month, end_year, end_month)
