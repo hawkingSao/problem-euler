@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def collatz_sequence(number:, count:)
   if number == 1
     count += 1

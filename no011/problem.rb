@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def diagonally_right_down_array(table:, row:, column:)
   Array.new(4) { |i| table[row + i][column + i] }
 end

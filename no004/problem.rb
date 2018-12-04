@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def palindrome?(result)
   result.to_s.reverse == result.to_s
 end

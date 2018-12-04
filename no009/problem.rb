@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def pythagorean_triplet?(smallest, middle, largest)
   smallest**2 + middle**2 == largest**2
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 File.open('number.txt') do |number|
   numbers_array = number.gets.chomp.chars.map(&:to_i)
 

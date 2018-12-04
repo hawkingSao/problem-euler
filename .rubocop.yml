@@ -1,13 +1,14 @@
 AllCops:
-  # 除外するディレクトリ（自動生成されたファイル）
-  # デフォルト設定にある"vendor/**/*"が無効化されないように記述
-  Exclude:
-    - bin/*
-    - db/schema.rb
-    - db/migrate/*
-    - vendor/**/*
-    - no014/problem.rb
+  TargetRubyVersion: 2.4.1
 
-# "Missing top-level class documentation comment."を無効
-Style/Documentation:
+# メソッドの行数が多すぎる
+MethodLength:
+  Enabled: false
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスにコメントを残さない
+Documentation:
   Enabled: false

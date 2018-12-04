@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def names
   File.open('names.txt').read.scan(/\w+/).sort
 end

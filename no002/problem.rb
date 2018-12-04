@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 fibonacci_sequence = [1, 2]
 
 loop do
